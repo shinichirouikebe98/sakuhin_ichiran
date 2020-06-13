@@ -50,7 +50,7 @@
 				    <tr>
 				      <th scope="row"><?= $sakuhin['code'];?></th>
 				      <td><?= $sakuhin['sakuhinmei'];?></td>
-				      <td><?= $sakuhin['seishakusha'];?></td>
+				      <td><?= $sakuhin['username'];?></td>
 				      <td><?= $sakuhin['genre'];?></td>
 				      <td>
 				      	
@@ -62,7 +62,7 @@
 
 						<!----edit button--->
 
-						<a href="" data-code="<?= $sakuhin['code'];?>" data-id="$sakuhin['seishakusha'];?>" class="_showUpdateModalSakuhin badge badge-success" data-toggle="modal" data-target="#formModal">編集</a>
+						<a href="" data-code="<?= $sakuhin['code'];?>" data-id="$sakuhin['username'];?>" class="_showUpdateModalSakuhin badge badge-success" data-toggle="modal" data-target="#formModal">編集</a>
 
 				      </td>
 

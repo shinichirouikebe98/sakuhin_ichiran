@@ -32,6 +32,9 @@
                     <li class="nav-item active">
                       <a class="nav-link" href="<?= BASEURL;?>/home/register"><font color="green" size="+1">メンバー登録</font></a>
                     </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="<?= BASEURL;?>/home/profile"><font color="purple" size="+1">プロファイル</font></a>
+                    </li>
 
             </ul>
 

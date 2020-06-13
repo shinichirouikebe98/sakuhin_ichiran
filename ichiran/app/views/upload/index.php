@@ -51,7 +51,7 @@
 				    <tr>
 				      <th scope="row"><?= $sakuhin['code'];?></th>
 				      <td><?= $sakuhin['sakuhinmei'];?></td>
-				      <td><?= $sakuhin['seishakusha'];?></td>
+				      <td><?= $sakuhin['username'];?></td>
 				      <td><?= $sakuhin['genre'];?></td>
 				      <td>
 				      	

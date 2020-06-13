@@ -18,7 +18,7 @@
 		    </tr>
 		    <tr>
 		      <td>製作者</td>
-		      <td><?=$data['detail_sakuhin']['seishakusha'];?></td>
+		      <td><?=$data['detail_sakuhin']['username'];?></td>
 		    </tr>
 		    <tr>
 		      <td>作品名</td>

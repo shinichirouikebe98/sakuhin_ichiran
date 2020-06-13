@@ -10,14 +10,20 @@
 				<td>ユーザネーム:</td>
 			</tr>
 			<tr>
-				<td><input type="text" name="username" id="username" placeholder="Username" pattern="[a-z]{0,9}" required="" maxlength="15" class="form-control" size="40"></td>
+				<td><input type="text" name="username" id="username" placeholder="Username" pattern="[A-Za-z0-9]{6,15}" required="" maxlength="15" class="form-control" size="40">
+                <font color="red">※6文字以上英文字</font></td>
+				
+
 			</tr>
 			<tr>
 				<td>パスワード：</td>
 			</tr>
 			<tr colspan="2">
-				<td><input type="password" name="password" id="password" placeholder="Password" pattern="[A-Za-z]{0,9}" required="" maxlength="15" class="form-control"　size="40"></td>
+				<td><input type="password" name="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="" maxlength="15" class="form-control"　size="40">
+                <font color="red">※8文字以上英数字、大文字+数字を含む</font></td>
+                </td>
 			</tr>
+				
 			<tr>
 				<td>E-Mail:</td>
 			</tr>

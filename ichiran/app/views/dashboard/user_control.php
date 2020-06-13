@@ -95,9 +95,13 @@
 	       <form action="<?= BASEURL; ?>/dashboard/addDataUsersDashboard" method="post" enctype="multipart/form-data">
 	       		<div class="form-group">
 					<label>ユーザーネーム</label>
-					<input type="text" name="username" id="username"  required="" maxlength="15" required="" class="form-control">
+					<input type="text" name="username" id="username" pattern="[A-Za-z0-9]{6,15}"  required=""  maxlength="15" required="" class="form-control">
+                    <label><font color="red">※6文字以上英文字</font></label>
+                   <br>
 					<label>パスワード</label>
-					<input type="password" name="password"　pattern="[A-Z][a-z]{0,9}" maxlength="15" id="password" required="" class="form-control">
+					<input type="password" name="password"　pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="15" id="password" required="" class="form-control">
+                    <label> <font color="red">※8文字以上英数字、大文字+数字を含む</font></label>
+                    <br>
 					<label>E-mail</label>
 					<input type="email" name="email" id="email" required="" class="form-control">
 					<label>Level</label>

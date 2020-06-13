@@ -16,11 +16,11 @@
 					console.log(data);
 					$('#code').val(data.code);
 					$('#old_name').val(data.file_name);
-					$('#seishakushaText').val(data.seishakusha);
+					$('#seishakushaText').val(data.username);
 					$('#sakuhinmei').val(data.sakuhinmei);
 					$('#conceptText').val(data.concept);
 					$('#genre').val(data.genre);
-					$('.modal-body form').attr('action','http://localhost:8080/ichiran/public/sakuhin/updateData/'+data.seishakusha);
+					$('.modal-body form').attr('action','http://localhost:8080/ichiran/public/sakuhin/updateData/'+data.username);
 					
 					
 					
@@ -65,7 +65,7 @@
 					console.log(data);
 					$('#code').val(data.code);
 					$('#old_name').val(data.file_name);
-					$('#seishakushaText').val(data.seishakusha);
+					$('#seishakushaText').val(data.username);
 					$('#sakuhinmei').val(data.sakuhinmei);
 					$('#conceptText').val(data.concept);
 					$('#genre').val(data.genre);

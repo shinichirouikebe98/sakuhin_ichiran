@@ -28,6 +28,7 @@ Class User extends Controller{
 			exit;
 		}
 	}
+	//hapusn account
 	public function deleteAccount($id_delete){
 		$check='succes';
 		if($this->model('User_model')->deleteDataUser($id_delete)>0)
@@ -47,6 +48,7 @@ Class User extends Controller{
 			exit;
 		}
 	}
+	//旧PW
 	public function loadOldPwd(){
 		echo json_encode($this->model('User_model')->loadUserData($_POST['id']));
 	}

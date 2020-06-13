@@ -18,7 +18,7 @@
 				<td>パスワード：</td>
 			</tr>
 			<tr colspan="2">
-				<td><input type="password" name="password" id="password" placeholder="Password" class="form-control"　size="40"></td>
+				<td><input type="password" name="password" id="password" placeholder="Password" maxlength="15" class="form-control"　size="40"></td>
 			</tr>
 			<tr>
 				<td><hr></td>

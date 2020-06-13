@@ -15,13 +15,13 @@ Class User_model{
 	}
 
 	function selectPictFileNameById($id){
-			 	$select='SELECT file_name FROM '.$this->table_sakuhin.' where seishakusha = :username';
+			 	$select='SELECT file_name FROM '.$this->table_sakuhin.' where username = :username';
 			 	$this->db->query($select);
 				$this->db->bind('username',htmlspecialchars($id));
 				return $this->db->resultSet();
 	}
 	function deleteAllSakuhinDataById($id){
-			 	$query=' DELETE FROM '.$this->table_sakuhin.' WHERE seishakusha = :username';
+			 	$query=' DELETE FROM '.$this->table_sakuhin.' WHERE username = :username';
 			 	$this->db->query($query);
 				$this->db->bind('username',htmlspecialchars($id));
 				$this->db->execute();

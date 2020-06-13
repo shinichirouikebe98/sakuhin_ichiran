@@ -30,7 +30,7 @@ class Sakuhin_model
 					return false;
 				}
 				//size
-				if($size > 8000000){
+				if($size > 12000000){
 					echo"<script> alert('サイズが大きすぎます制限が８メガバイトです。');</script>";
 					return false;
 				}
@@ -40,7 +40,7 @@ class Sakuhin_model
 				$newFileName .= $extention;
 
 
-				move_uploaded_file($tmpName, "/opt/lampp/htdocs/ichiran/public/img/".$newFileName);
+				move_uploaded_file($tmpName, "opt/lampp/htdocs/ichiran/public/img/".$newFileName);
 
 				return $newFileName;
 		}
@@ -53,7 +53,7 @@ class Sakuhin_model
 			return false;
 		}
 
-		$query='INSERT INTO ' .$this->table. '(seishakusha,sakuhinmei,concept,file_name,genre) values(:seisakusha,:sakuhinmei,:concept,:filename,:genre)';
+		$query='INSERT INTO ' .$this->table. '(username,sakuhinmei,concept,file_name,genre) values(:seisakusha,:sakuhinmei,:concept,:filename,:genre)';
 		$this->db->query($query);
 		//bind data
 		$this->db->bind('seisakusha', htmlspecialchars($data['seishakushaText'])); //hubungkan dengan name dari input
@@ -70,7 +70,7 @@ class Sakuhin_model
 	
 	public function getDataSakuhin($seishakusha)
 	{
-		$this->db->query('SELECT * FROM ' . $this->table .' where seishakusha = :seishakusha'); 
+		$this->db->query('SELECT * FROM ' . $this->table .' where username = :seishakusha'); 
 		$this->db->bind('seishakusha', htmlspecialchars($seishakusha));
 		return $this->db->resultSet();
 	}
@@ -112,7 +112,7 @@ class Sakuhin_model
 			return false;
 			}
 		}
-		$query="UPDATE " .$this->table. " set  seishakusha= :seisakusha,sakuhinmei= :sakuhinmei,concept= :concept,file_name= :filename,genre= :genre where code =:code";
+		$query="UPDATE " .$this->table. " set  username= :seisakusha,sakuhinmei= :sakuhinmei,concept= :concept,file_name= :filename,genre= :genre where code =:code";
 		$this->db->query($query);
 		//bind data
 		$this->db->bind('code',$data['code']);
@@ -144,7 +144,7 @@ class Sakuhin_model
 			return $this->db->resultSet();
 		}
 		else{
-			$query = "SELECT * FROM ". $this->table ." where  genre LIKE :keyword or sakuhinmei LIKE :keyword or seishakusha LIKE :keyword";
+			$query = "SELECT * FROM ". $this->table ." where  genre LIKE :keyword or sakuhinmei LIKE :keyword or username LIKE :keyword";
 			$this->db->query($query);
 			$this->db->bind('keyword',"%$keyword%");
 			return $this->db->resultSet();
@@ -155,7 +155,7 @@ class Sakuhin_model
 	public function searchSakuhin()
 	{
 		$keyword = htmlspecialchars($_POST['search']);
-		$query = "SELECT * FROM ". $this->table ." where  genre LIKE :keyword or sakuhinmei LIKE :keyword or seishakusha LIKE :keyword";
+		$query = "SELECT * FROM ". $this->table ." where  genre LIKE :keyword or sakuhinmei LIKE :keyword or username LIKE :keyword";
 		$this->db->query($query);
 		$this->db->bind('keyword',"%$keyword%");
 

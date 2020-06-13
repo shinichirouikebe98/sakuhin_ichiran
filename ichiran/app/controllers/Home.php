@@ -13,6 +13,13 @@ class Home extends Controller{
 		$this->view('home/index',$data);
 		$this->view('templates/footer');
 	}
+	public function profile()
+	{	
+		$data['title'] = 'profile';
+		$this->view('templates/home_header',$data);
+		$this->view('home/profile');
+		$this->view('templates/footer');
+	}
 	public function search(){
 		$data['title'] = 'Home';
 		$data['sakuhin_data']=$this->model('Sakuhin_model')->searchSakuhinIndex($_POST);

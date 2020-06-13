@@ -18,6 +18,7 @@ class Sakuhin extends Controller{
 		$this->view('upload/details',$data);
 		$this->view('templates/footer');
 	}
+	//追加
 	public function addData($username)
 	{
 		if($this->model('Sakuhin_model')->addDataSakuhin($_POST)>0)
@@ -33,7 +34,7 @@ class Sakuhin extends Controller{
 		}
 
 	}
-
+	//delete
 	public function deleteData($id_delete,$file_delete,$username)
 	{	
 		if($this->model('Sakuhin_model')->deleteSakuhinById($id_delete,$file_delete)>0)
